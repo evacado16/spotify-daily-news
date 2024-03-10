@@ -1,0 +1,11 @@
+@import "../utils/variables";
+
+.headerContainer {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-bottom: 2em;
+}
