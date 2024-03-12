@@ -25,3 +25,5 @@ export const getTokenFromUrl = () => {
         return initial;
         }, {});
     }
+
+

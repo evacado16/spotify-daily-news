@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Header from './components/Header';
 import Main from './components/Main';
-import { getTokenFromUrl } from './constants/spotify';
+import { getTokenFromUrl } from './controllers/spotify';
 import SpotifyWebApi from 'spotify-web-api-js';
 import { Box } from '@mui/material';
 

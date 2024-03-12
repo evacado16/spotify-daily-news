@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import { loginUrl } from '../constants/spotify';
+import { loginUrl } from '../controllers/spotify';
 
 const Login = () => {
   return (
