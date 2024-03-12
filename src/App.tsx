@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './components/Login';
+import Login from './pages/Login';
 import Header from './components/Header';
-import Main from './components/Main';
-import { getTokenFromUrl } from './controllers/spotify';
+import Main from './pages/Main';
+import { getTokenFromUrl } from './services/spotify';
 import SpotifyWebApi from 'spotify-web-api-js';
 import { Box } from '@mui/material';
 

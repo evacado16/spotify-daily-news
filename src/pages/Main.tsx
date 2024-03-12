@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import MenuCard from './MenuCard'
+import MenuCard from '../components/MenuCard'
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
