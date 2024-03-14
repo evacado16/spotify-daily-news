@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <>
-    <div className={containerClasses}>
+    <div className={containerClasses} onClick={() => {window.location.href = '/'}}>
         <img src={spotifyLogo} alt='Spotify Logo' className={styles.spotifyLogo} />
         <h1>Spotify Daily News</h1>
     </div>

@@ -23,9 +23,13 @@ const App = () => {
       window.localStorage.setItem('token', _token);
       setSpotifyToken(_token);
       spotifyService.setAccessToken(_token);
-      spotifyService.getMe().then(user => {
-        console.log(user);
-      });
+      spotifyService.getMe()
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
   }, []);
 
