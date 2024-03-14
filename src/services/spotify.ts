@@ -61,4 +61,5 @@ class SpotifyService {
     }
 }
 
-export default new SpotifyService;
+const spotifyService = new SpotifyService();
+export default spotifyService;
