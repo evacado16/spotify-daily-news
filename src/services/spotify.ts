@@ -28,6 +28,10 @@ class SpotifyService {
         this.spotify.setAccessToken(token);
     }
 
+    public getAccessToken(): string | null {
+        return this.spotify.getAccessToken();
+    }
+
     public getTokenFromUrl(): any {
         return window.location.hash
             .substring(1)
