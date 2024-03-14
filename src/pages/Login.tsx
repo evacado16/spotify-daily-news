@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import { loginUrl } from '../services/spotify';
+import spotifyService from '../services/spotify';
 
 const Login = () => {
   return (
@@ -7,7 +7,7 @@ const Login = () => {
     <div className="container flex-column">
       <h1>Welcome to Spotify Daily News</h1>
       <p>Get the latest news on your favorite artists and songs</p>
-      <Button variant="contained" color="secondary" href={ loginUrl }>Login with Spotify</Button>
+      <Button variant="contained" color="secondary" href={ spotifyService.loginUrl }>Login with Spotify</Button>
     </div>
     </>
   )

@@ -22,10 +22,13 @@ const Main = () => {
                 <Button variant="contained" color="secondary" onClick={logout}>Logout</Button>
             </Grid>
             <Grid item xs={6}>
-                <MenuCard title="Fav Artist New Releases" description="test" redirectURL='/'/>
+                <MenuCard title="Fav Artist New Releases" description="test" redirectURL='/artist-new-releases'/>
             </Grid>
             <Grid item xs={6}>
                 <MenuCard title="Fav Genre New Releases" description="test" redirectURL='/'/>
+            </Grid>
+            <Grid item xs={6}>
+                <MenuCard title="Other Recommended New Releases" description="test" redirectURL='/other-new-releases'/>
             </Grid>
         </Grid>
     </>

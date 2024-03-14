@@ -14,19 +14,19 @@ interface Props {
 const MenuCard: React.FC<Props> = ({title, description, redirectURL}) => {
 
     const card = (
-        <React.Fragment>
-          <CardContent>
-            <Typography variant="h5" component="div">
-                {title}
-            </Typography>
-            <Typography variant="body2">
-                {description}
-            </Typography>
-          </CardContent>
-          <CardActions sx={{float: 'right'}}>
-            <Button color="secondary">Discover</Button>
-          </CardActions>
-        </React.Fragment>
+      <React.Fragment>
+        <CardContent>
+        <Typography variant="h5" component="div">
+          {title}
+        </Typography>
+        <Typography variant="body2">
+          {description}
+        </Typography>
+        </CardContent>
+        <CardActions sx={{float: 'right'}}>
+        <Button color="secondary" onClick={() => window.location.href = redirectURL}>Discover</Button>
+        </CardActions>
+      </React.Fragment>
       );
 
   return (
