@@ -12,7 +12,7 @@ class SpotifyService {
     constructor() {
         this.spotify = new SpotifyWebApi();
         this.authEndpoint = 'https://accounts.spotify.com/authorize';
-        this.redirectUri = 'http://localhost:3000';
+        this.redirectUri = window.location.origin;
         this.clientId = '5140bf1bf57a4376813003af84e64a41';
         this.scopes = [
             'user-read-currently-playing',
