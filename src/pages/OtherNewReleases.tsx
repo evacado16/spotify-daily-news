@@ -10,6 +10,7 @@ const OtherNewReleases = () => {
   const [isLoading, setIsLoading] = React.useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     spotifyService.getNewReleases()
       .then((data) => {
         console.log(data);
