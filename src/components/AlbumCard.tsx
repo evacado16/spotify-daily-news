@@ -1,10 +1,42 @@
+import { useEffect } from 'react';
 import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { PauseCircle } from '@mui/icons-material';
 import { Album } from '../types/Album';
+import spotifyService from '../services/spotify';
+import React from 'react';
 
 const AlbumCard = ({ album }: { album: Album }) => {
 
-  // const { album_type, total_tracks, href, id, images, name, release_date, release_date_precision, artists } = album;
+  const [isPlaying, setIsPlaying] = React.useState(false);
+
+  const playAlbum = () => {
+    console.log(`Playing album: ${album.name}`);
+    if (isPlaying) {
+      spotifyService.pause().catch((error) => console.error(error));
+    }
+    else {
+      spotifyService.play(album.id).then((data) => {
+        console.log(data);
+      }).catch((error) => console.error(error));
+    }
+  }
+
+  useEffect(() => {
+    const checkIfAlbumIsPlaying = setInterval(() => {
+      spotifyService.getNowPlaying().then((data) => {
+        if (data.is_playing && data.item.album.id === album.id) {
+          setIsPlaying(true);
+        } else {
+          setIsPlaying(false);
+        }
+      }).catch((e) => console.log(e))
+    }, 1000); // Run the check every 1 second
+
+    return () => {
+      clearInterval(checkIfAlbumIsPlaying); // Clean up the interval when the component unmounts
+    };
+  }, [album.id]);
 
   return (
     <Card sx={{ display: 'flex' }}>
@@ -18,8 +50,12 @@ const AlbumCard = ({ album }: { album: Album }) => {
           </Typography>
         </CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+          <IconButton aria-label="play/pause" onClick={playAlbum}>
+            {isPlaying ? (
+              <PauseCircle sx={{ height: 38, width: 38 }} />
+            ) : (
+              <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+            )}
           </IconButton>
         </Box>
       </Box>

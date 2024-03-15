@@ -63,6 +63,18 @@ class SpotifyService {
     public async getNewReleases(): Promise<any> {
         return await this.spotify.getNewReleases();
     }
+
+    public async getNowPlaying(): Promise<any> {
+        return await this.spotify.getMyCurrentPlaybackState();
+    }
+
+    public async play(albumUri: string): Promise<any> {
+        return await this.spotify.play({ "context_uri": `spotify:album:${albumUri}` });
+    }
+
+    public async pause(): Promise<any> {
+        return await this.spotify.pause();
+    }
 }
 
 const spotifyService = new SpotifyService();
